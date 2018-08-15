@@ -1,5 +1,5 @@
 {
-  "name": "blockstack-auth-provider",
+  "name": "blockstack-react-auth-provider",
   "version": "1.0.0",
   "description": "A lightweight React Context wrapper for easy Blockstack authentication state management",
   "main": "dist",
