@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "react-optimize"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-runtime"
+  ]
+}

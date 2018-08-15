@@ -1,0 +1,30 @@
+{
+  "name": "blockstack-auth-provider",
+  "version": "1.0.0",
+  "description": "A lightweight React Context wrapper for easy Blockstack authentication state management",
+  "main": "dist",
+  "repository": "https://github.com/harrysolovay/blockstack-auth-provider.git",
+  "author": "Harry Solovay <harrysolovay@gmail.com> (harrysolovay.com)",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "blockstack": "^18.0.4",
+    "react": "^16.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-runtime": "^6.26.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  }
+}
