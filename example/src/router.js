@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AuthConsumer } from 'blockstack-react-provider'
+import { AuthConsumer } from 'blockstack-react-auth-provider'
 import { Loading } from '~/components'
 import { Feed, Search, Account, FourOFour } from '~/pages'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthConsumer } from 'blockstack-react-provider'
+import { AuthConsumer } from 'blockstack-react-auth-provider'
 import { Page } from '~/components'
 
 export default () => (

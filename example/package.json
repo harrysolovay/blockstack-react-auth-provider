@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "blockstack": "^18.0.4",
+    "blockstack-react-auth-provider": "^1.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.4",

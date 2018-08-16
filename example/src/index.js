@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AuthProvider } from 'blockstack-react-provider'
+import { AuthProvider } from 'blockstack-react-auth-provider'
 import Router from '~/router'
 import { render } from 'react-dom'
 import { hot } from 'react-hot-loader'

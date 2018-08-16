@@ -1165,6 +1165,10 @@ bitcoinjs-lib@^4:
     varuint-bitcoin "^1.0.4"
     wif "^2.0.1"
 
+blockstack-react-auth-provider@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/blockstack-react-auth-provider/-/blockstack-react-auth-provider-1.0.0.tgz#10007289d389fdd9db2cf1f72335e5bde302e934"
+
 blockstack@^18.0.4:
   version "18.0.4"
   resolved "https://registry.yarnpkg.com/blockstack/-/blockstack-18.0.4.tgz#fb98c4269c72da3bcc0c1d0331c0d43ddad20e14"
