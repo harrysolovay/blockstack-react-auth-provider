@@ -1,6 +1,6 @@
 {
   "name": "blockstack-auth-provider",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "blockstack": "^18.0.4",
