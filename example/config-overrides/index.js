@@ -1,5 +1,5 @@
 const rewireBabel = require('./rewires/babel')
-const rewireWhitlist = require('./rewires/whitelist')
+const rewireWhitelist = require('./rewires/whitelist')
 
 module.exports = {
 
@@ -9,7 +9,7 @@ module.exports = {
 
     if(env === 'production') {
 
-      config = rewireWhitlist(config, [
+      config = rewireWhitelist(config, [
         'bitcoinjs-lib',
         'tiny-secp256k1/ecurve',
         'base64url/dist/base64url',

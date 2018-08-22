@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "blockstack": "^18.0.4",
-    "blockstack-react-auth-provider": "^1.0.0",
+    "blockstack-react-auth-provider": "^1.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.4",
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build && open http://localhost:5000 && serve -s build",
+    "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom"
   }
 }
