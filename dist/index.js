@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.AuthProvider = exports.LOCAuthProvider = exports.AuthConsumer = undefined;
+exports.AuthProvider = exports.AuthConsumer = undefined;
 
 var _regenerator = require('babel-runtime/regenerator');
 
@@ -81,22 +81,21 @@ var AuthConsumer = exports.AuthConsumer = function (_Component) {
   return AuthConsumer;
 }(_react.Component);
 
-var InitialAuthProvider = function (_Component2) {
-  (0, _inherits3.default)(InitialAuthProvider, _Component2);
+var AuthProvider = exports.AuthProvider = function (_Component2) {
+  (0, _inherits3.default)(AuthProvider, _Component2);
 
-  function InitialAuthProvider() {
-    var _ref,
-        _this4 = this;
+  function AuthProvider() {
+    var _ref;
 
     var _temp, _this3, _ret;
 
-    (0, _classCallCheck3.default)(this, InitialAuthProvider);
+    (0, _classCallCheck3.default)(this, AuthProvider);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this3 = (0, _possibleConstructorReturn3.default)(this, (_ref = InitialAuthProvider.__proto__ || (0, _getPrototypeOf2.default)(InitialAuthProvider)).call.apply(_ref, [this].concat(args))), _this3), _this3.state = INITIAL_STATE, _this3.info = function () {
+    return _ret = (_temp = (_this3 = (0, _possibleConstructorReturn3.default)(this, (_ref = AuthProvider.__proto__ || (0, _getPrototypeOf2.default)(AuthProvider)).call.apply(_ref, [this].concat(args))), _this3), _this3.state = INITIAL_STATE, _this3.info = function () {
       var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : (0, _blockstack.loadUserData)(),
           username = _ref2.username,
           name = _ref2.profile.name;
@@ -106,79 +105,7 @@ var InitialAuthProvider = function (_Component2) {
         name: name,
         loggedIn: true
       };
-    }, _this3.refresh = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-      var user;
-      return _regenerator2.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-
-              _this3.setState(function (state) {
-                return (0, _extends3.default)({}, state, {
-                  isLoading: true
-                });
-              });
-
-              if (!(0, _blockstack.isSignInPending)()) {
-                _context.next = 14;
-                break;
-              }
-
-              _context.prev = 2;
-              _context.next = 5;
-              return (0, _blockstack.handlePendingSignIn)();
-
-            case 5:
-              user = _context.sent;
-
-              if (user) {
-                _this3.setState(function (state) {
-                  return (0, _extends3.default)({}, state, _this3.info(user), {
-                    isLoading: false
-                  });
-                });
-              }
-              _context.next = 12;
-              break;
-
-            case 9:
-              _context.prev = 9;
-              _context.t0 = _context['catch'](2);
-
-              console.error('failed to handle pending sign-in: ' + _context.t0);
-
-            case 12:
-              _context.next = 15;
-              break;
-
-            case 14:
-              if ((0, _blockstack.isUserSignedIn)()) {
-                _this3.setState(function (state) {
-                  return (0, _extends3.default)({}, state, _this3.info(), {
-                    isLoading: false
-                  });
-                });
-              } else {
-
-                if (window.location.pathname.indexOf('account') >= 0) {
-                  window.location = window.location.protocol + '//' + window.location.host;
-                }
-
-                _this3.setState(function (state) {
-                  return (0, _extends3.default)({}, state, {
-                    INITIAL_STATE: INITIAL_STATE,
-                    isLoading: false
-                  });
-                });
-              }
-
-            case 15:
-            case 'end':
-              return _context.stop();
-          }
-        }
-      }, _callee, _this4, [[2, 9]]);
-    })), _this3.logIn = function () {
+    }, _this3.logIn = function () {
       _this3.setState(function (state) {
         return (0, _extends3.default)({}, state, {
           isLoading: true
@@ -197,67 +124,103 @@ var InitialAuthProvider = function (_Component2) {
     }, _temp), (0, _possibleConstructorReturn3.default)(_this3, _ret);
   }
 
-  (0, _createClass3.default)(InitialAuthProvider, [{
+  (0, _createClass3.default)(AuthProvider, [{
     key: 'render',
     value: function render() {
       var state = this.state,
           logIn = this.logIn,
-          logOut = this.logOut,
-          refresh = this.refresh;
+          logOut = this.logOut;
 
 
       return _react2.default.createElement(Provider, (0, _extends3.default)({
-        value: {
-          state: state,
-          logIn: logIn,
-          logOut: logOut,
-          refresh: refresh
-        }
+        value: { state: state, logIn: logIn, logOut: logOut }
       }, this.props));
-    }
-  }]);
-  return InitialAuthProvider;
-}(_react.Component);
-
-var LOCAuthProvider = exports.LOCAuthProvider = function (_Component3) {
-  (0, _inherits3.default)(LOCAuthProvider, _Component3);
-
-  function LOCAuthProvider() {
-    (0, _classCallCheck3.default)(this, LOCAuthProvider);
-    return (0, _possibleConstructorReturn3.default)(this, (LOCAuthProvider.__proto__ || (0, _getPrototypeOf2.default)(LOCAuthProvider)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(LOCAuthProvider, [{
-    key: 'render',
-    value: function render() {
-      return this.props.children;
     }
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.refresh();
-    }
-  }]);
-  return LOCAuthProvider;
-}(_react.Component);
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        var _this4 = this;
 
-var AuthProvider = exports.AuthProvider = function (_Component4) {
-  (0, _inherits3.default)(AuthProvider, _Component4);
+        var user;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
 
-  function AuthProvider() {
-    (0, _classCallCheck3.default)(this, AuthProvider);
-    return (0, _possibleConstructorReturn3.default)(this, (AuthProvider.__proto__ || (0, _getPrototypeOf2.default)(AuthProvider)).apply(this, arguments));
-  }
+                this.setState(function (state) {
+                  return (0, _extends3.default)({}, state, {
+                    isLoading: true
+                  });
+                });
 
-  (0, _createClass3.default)(AuthProvider, [{
-    key: 'render',
-    value: function render() {
-      var _this7 = this;
+                if (!(0, _blockstack.isSignInPending)()) {
+                  _context.next = 14;
+                  break;
+                }
 
-      (0, _jsx3.default)(InitialAuthProvider, {}, void 0, function (props) {
-        return _react2.default.createElement(LOCAuthProvider, (0, _extends3.default)({}, props, _this7.props));
-      });
-    }
+                _context.prev = 2;
+                _context.next = 5;
+                return (0, _blockstack.handlePendingSignIn)();
+
+              case 5:
+                user = _context.sent;
+
+                if (user) {
+                  this.setState(function (state) {
+                    return (0, _extends3.default)({}, state, _this4.info(user), {
+                      isLoading: false
+                    });
+                  });
+                }
+                _context.next = 12;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context['catch'](2);
+
+                console.error('failed to handle pending sign-in: ' + _context.t0);
+
+              case 12:
+                _context.next = 15;
+                break;
+
+              case 14:
+                if ((0, _blockstack.isUserSignedIn)()) {
+                  this.setState(function (state) {
+                    return (0, _extends3.default)({}, state, _this4.info(), {
+                      isLoading: false
+                    });
+                  });
+                } else {
+
+                  if (window.location.pathname.indexOf('account') >= 0) {
+                    window.location = window.location.protocol + '//' + window.location.host;
+                  }
+
+                  this.setState(function (state) {
+                    return (0, _extends3.default)({}, state, {
+                      INITIAL_STATE: INITIAL_STATE,
+                      isLoading: false
+                    });
+                  });
+                }
+
+              case 15:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[2, 9]]);
+      }));
+
+      function componentDidMount() {
+        return _ref3.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
   }]);
   return AuthProvider;
 }(_react.Component);

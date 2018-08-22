@@ -43,7 +43,7 @@ export class AuthConsumer extends Component {
 
 
 
-class InitialAuthProvider extends Component {
+export class AuthProvider extends Component {
 
 
   state = INITIAL_STATE
@@ -54,18 +54,12 @@ class InitialAuthProvider extends Component {
     const {
       state,
       logIn,
-      logOut,
-      refresh,
+      logOut
     } = this
 
     return (
       <Provider
-        value={{
-          state,
-          logIn,
-          logOut,
-          refresh,
-        }}
+        value={{ state, logIn, logOut }}
         { ...this.props }
       />
     )
@@ -85,7 +79,7 @@ class InitialAuthProvider extends Component {
   })
 
 
-  refresh = async () => {
+  async componentDidMount() {
 
     this.setState((state) => ({
       ...state,
@@ -152,34 +146,4 @@ class InitialAuthProvider extends Component {
   }
 
 
-}
-
-
-
-
-export class LOCAuthProvider extends Component {
-  render() {
-    return this.props.children
-  }
-  componentDidMount() {
-    this.props.refresh()
-  }
-}
-
-
-
-
-export class AuthProvider extends Component {
-  render() {
-    <InitialAuthProvider>
-      {(props) => (
-        <LOCAuthProvider
-          { ...{
-            ...props,
-            ...this.props
-          }}
-        />
-      )}
-    </InitialAuthProvider>
-  }
 }
