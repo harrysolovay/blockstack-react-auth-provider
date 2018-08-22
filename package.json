@@ -1,6 +1,6 @@
 {
   "name": "blockstack-react-auth-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight React Context-based management of Blockstack authentication state",
   "main": "dist",
   "repository": "https://github.com/harrysolovay/blockstack-auth-provider.git",
